@@ -62,6 +62,7 @@ export default function MyInput(props) {
                     sx={props.style}
                     id="filled-basic"
                     label="Text"
+                    multiline
                     value={text}
                     onChange={(event) => setText(event.target.value)}
                 />

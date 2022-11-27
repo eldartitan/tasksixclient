@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from "axios"
 
 const API_URL = "https://kindly-spring-production.up.railway.app/api";
+// const API_URL = "https://kindly-spring-production.up.railway.app/api/users";
 
 export const getUsers = createAsyncThunk(
   "user/getUsers",
