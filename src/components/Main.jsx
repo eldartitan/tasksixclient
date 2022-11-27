@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUser, getUsers, sendMessage } from "../store/userSlice";
-import Container from "@mui/material/Container";
-import { List, ListItem, Typography } from "@mui/material";
+import { getUser, getUsers } from "../store/userSlice";
+import { List, ListItem, Stack, Container } from "@mui/material";
 import Message from "./Message";
-import { Stack } from "@mui/system";
 import MyInput from "./MyInput";
 
 export default function Main() {
     const dispatch = useDispatch();
-    const { users, logUser, error } = useSelector((state) => state.user);
+    const { users, logUser } = useSelector((state) => state.user);
 
     useEffect(() => {
         dispatch(getUsers());
