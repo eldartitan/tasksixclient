@@ -6,20 +6,20 @@ export default function Message(props) {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <Card sx={{ width: "100%" }}>
+            <Card sx={{ minWidth: 360 }}>
                 <CardContent>
                     <Button size="small" onClick={() => setIsOpen(!isOpen)}>
                         {props.theme}
                     </Button>
                     {isOpen && (
-                        <Typography variant="body2">{props.text}</Typography>
+                        <Typography variant="body2" sx={{wordWrap: "break-word"}}>{props.text}</Typography>
                     )}
                     <Typography
                         sx={{ fontSize: 14 }}
                         color="text.secondary"
                         gutterBottom
                     >
-                        send from {props.sendFrom} at{" "}
+                        send from <span style={{fontWeight: 600}}>{props.sendFrom}</span> at{" "}
                         {props.createdAt
                             .replace("T", " ")
                             .slice(0, props.createdAt.length - 5)}
